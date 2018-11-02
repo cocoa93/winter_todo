@@ -8,7 +8,7 @@ from django.utils import timezone
 
 def todo_list(request):
     todo_objects = Todo.objects.all()
-    now = timezone.now()
+    now = timezone.now().date()
     todo_objects = sorted(todo_objects,key=lambda d: d.importance,reverse=True)
     return render(request,'todo/todo_list.html',{'todo_objects':todo_objects,'now':now,})
 

@@ -22,9 +22,6 @@
             </a>
         </span>
         <a href="{% url 'todo_detail' pk=todos.pk %}" >{{ todos.title }}</a>
-        {% if todos.dueDate < now %}
-            <span class="duedate-over">Time over</span>
-        {% endif %}
             <span class="importance">
             <a href="{% url 'todo_importance' pk=todos.pk %}">
             {% if todos.importance %}
@@ -38,6 +35,9 @@
     <span>
         <a href="{% url 'todo_delete' pk=todos.pk %}">delete</a>
     </span>
+    {% if todos.dueDate < now %}
+    <span class="duedate-over">over</span>
+    {% endif %}
     </div>
 
 {% endfor %}
