@@ -22,7 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.todo_list,name="todo_list"),
     path('write/',views.todo_write,name="todo_write"),
+    url(r'^(?P<pk>\d+)/edit/$', views.todo_edit, name="todo_edit"),
+    url(r'^(?P<pk>\d+)/$', views.todo_detail, name="todo_detail"),
     url(r'^(?P<pk>\d+)/delete/$',views.todo_delete,name="todo_delete"),
-    url(r'^(?P<pk>\d+)/edit/$',views.todo_edit,name="todo_edit"),
-    url(r'^(?P<pk>\d+)/$', views.todo_detail,name="todo_detail"),
+    url(r'^(?P<pk>\d+)/check$', views.todo_check,name="todo_check"),
+    url(r'^(?P<pk>\d+)/importance$', views.todo_importance,name="todo_importance"),
 ]

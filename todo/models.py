@@ -17,15 +17,17 @@ class Todo (models.Model):
         (NOT_URGENT_NOT_IMPORTANT, 'not urgent&not important'),
     )
 
-    title = models.CharField(max_length=50)
-    content = models.TextField()
-    dueDate = models.DateTimeField(
-        blank=True,
-        null = True
-    )
     priority = models.CharField(
         max_length=2,
         choices=PRIORITY_CHOICES,
         default=NOT_URGENT_NOT_IMPORTANT,
     )
+
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    dueDate = models.DateField(
+        blank= True,
+        null = True
+    )
+    importance = done = models.BooleanField(default=False)
     done = models.BooleanField(default=False)
