@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{%  for todos in  todo_objects %}
+
+    <a href="{% url 'todo_detail' pk=todos.pk %}" ><div class="todos">{{ todos.title }}
+    {% if todos.dueDate < now %}
+        <span class="duedate-over">over</span>
+    {% endif %}
+    </div></a>
+
+{% endfor %}
+
+<div class="write-botton"><a href="{% url 'todo_write' %}">+</a></div>
+
+</body>
+</html>

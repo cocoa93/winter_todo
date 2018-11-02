@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>todo</h1>
+<div class="title"> <h3>{{todo.title}}</h3></div>
+<div class="content">
+    <div class="text">{{ todo.content }}</div>
+    <div class="due-date">기한: {{ todo.dueDate }}</div>
+</div>
+<div class="edit-button"><a href="{% url 'todo_edit' pk=todo.pk  %}">edit</a></div>
+<div class="delete-button"><a href="{% url 'todo_delete' pk=todo.pk  %}">delete</a></div>
+
+</body>
+</html>
